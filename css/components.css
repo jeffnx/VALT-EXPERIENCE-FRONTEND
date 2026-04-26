@@ -1,0 +1,215 @@
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.98); 
+    border-bottom: 1px solid var(--gray-800);
+    backdrop-filter: blur(12px);
+}
+
+.nav-top {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; 
+}
+
+.logo-img { height: 95px; image-rendering: pixelated; }
+
+/* BUSCA */
+.search-wrap { 
+    flex: 1; 
+    max-width: 600px; 
+    min-width: 200px; 
+    position: relative; 
+}
+.search-wrap input {
+    width: 100%;
+    padding: 12px 20px;
+    background: #080808;
+    border: 1px solid #1a1a1a;
+    border-radius: 4px;
+    color: #eee;
+    outline: none;
+    font-family: var(--font-body);
+}
+.search-wrap input:focus { border-color: var(--yellow); }
+
+.search-btn {
+    position: absolute;
+    right: 6px; top: 50%; transform: translateY(-50%);
+    background: var(--yellow);
+    border: none; border-radius: 4px;
+    width: 34px; height: 34px;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+
+/* NAV ACTIONS */
+.nav-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    flex-shrink: 0; 
+}
+
+.btn-anunciar {
+    background: var(--yellow);
+    color: #000;
+    padding: 10px 20px;
+    font-family: var(--font-retro);
+    font-size: 10px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+    transition: 0.3s;
+    white-space: nowrap; 
+}
+.btn-anunciar:hover {
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+/* ÍCONES */
+.nav-icons { display: flex; align-items: center; gap: 15px; }
+.icon-btn {
+    background: none; border: none; color: #ccc; cursor: pointer;
+    display: flex; align-items: center; transition: 0.2s;
+}
+.icon-btn:hover { color: var(--yellow); transform: scale(1.1); }
+.icon-btn .material-symbols-rounded { font-size: 24px; }
+
+/* NAV SUB & CATEGORIES */
+.nav-sub { border-top: 1px solid var(--gray-800); background: #050505; position: relative; }
+.nav-sub-inner { display: flex; justify-content: center; max-width: 1280px; margin: 0 auto; }
+
+.cat-btn {
+    background: none;
+    border: none;
+    padding: 18px 20px;
+    color: #999;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.cat-btn:hover { color: var(--yellow); }
+
+.cat-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; 
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--yellow);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    pointer-events: none;
+}
+
+.cat-btn.active { color: var(--yellow); }
+.cat-btn.active::after { width: 40px; }
+
+/* MEGA MENU */
+.mega-menu {
+    position: absolute; 
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%) translateY(10px);
+    width: 700px; 
+    background: #0a0a0a; 
+    border: 1px solid var(--gray-800); 
+    border-top: 2px solid var(--yellow);
+    display: flex; 
+    padding: 30px; 
+    gap: 30px; 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: 0.3s;
+}
+
+.nav-item:hover .mega-menu { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateX(-50%) translateY(0); 
+}
+
+.mega-img-area { flex: 0 0 250px; height: 300px; position: relative; overflow: hidden; }
+.mega-img-area img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.nav-item:hover .mega-img-area img { transform: scale(1.05); }
+
+.mega-label { 
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    background: var(--yellow); 
+    color: #000; 
+    padding: 12px; 
+    text-align: center; 
+    font-weight: 800; 
+    font-size: 12px; 
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.mega-label:hover { background: var(--white); letter-spacing: 1px; }
+
+.mega-links-area { display: flex; gap: 40px; }
+.mega-col h4 { color: var(--yellow); font-size: 12px; text-transform: uppercase; margin-bottom: 15px; }
+.mega-col ul { list-style: none; }
+.mega-col ul li { margin-bottom: 8px; }
+
+.mega-col ul li a { 
+    color: #aaa !important; 
+    text-decoration: none !important; 
+    font-size: 14px; 
+    display: block; 
+    transition: 0.2s; 
+    position: relative;
+}
+
+.mega-col ul li a::before {
+    content: '› ';
+    color: var(--yellow);
+    opacity: 0;
+    margin-right: 0px;
+    transition: 0.2s;
+    display: inline-block;
+}
+
+.mega-col ul li a:hover { color: var(--yellow) !important; padding-left: 5px; }
+.mega-col ul li a:hover::before { opacity: 1; margin-right: 5px; }
+
+.mega-all {
+    display: block;
+    margin-top: 25px;
+    color: var(--yellow);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.mega-all:hover { text-decoration: underline; }
+
+/* FOOTER */
+#footer { background: #050505; border-top: 1px solid var(--gray-800); padding: 60px 0 30px; margin-top: 40px; }
+.footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; max-width: 1280px; margin: 0 auto; padding: 0 24px; gap: 40px; }
+.footer-logo { height: 60px; margin-bottom: 20px; }
+.footer-desc { color: #888; font-size: 14px; line-height: 1.6; }
+.footer-col-title { color: var(--yellow); font-weight: 800; text-transform: uppercase; margin-bottom: 20px; font-size: 12px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: #aaa; text-decoration: none; font-size: 14px; transition: 0.2s; }
+.footer-links a:hover { color: var(--yellow); }
+.footer-divider { border: 0; border-top: 1px solid #111; margin: 40px 0; }
+.footer-bottom { display: flex; justify-content: space-between; max-width: 1280px; margin: 0 auto; padding: 0 24px; color: #666; font-size: 13px; }
+.footer-bottom span { color: var(--yellow); font-weight: 700; }

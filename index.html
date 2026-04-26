@@ -1,203 +1,234 @@
-<!-- Copyright since 2026 By Jeff.dev; Kalyl.dev; vitor.dev -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vault Experience – Geek & Retro Store</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/app.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vault Experience – Geek & Retro Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
 <header id="navbar">
-  <div class="nav-top">
+    <div class="nav-top">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="Vault Experience" class="logo-img" />
+        </a>
 
-    <!-- Logo principal -->
-    <a href="#" class="logo" aria-label="Vault Experience – Início">
-      <img src="assets/logo.png" alt="Vault Experience" class="logo-img" />
-    </a>
+        <div class="search-wrap">
+            <input type="text" placeholder="Buscar consoles, jogos, mangás…" />
+            <button class="search-btn">
+                <svg width="16" height="16" fill="none" stroke="#000" stroke-width="2.5" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+        </div>
 
-    <!-- Barra de busca -->
-    <div class="search-wrap">
-      <input type="text" placeholder="Buscar consoles, jogos, mangás…" aria-label="Buscar" />
-      <button class="search-btn" aria-label="Pesquisar">
-        <svg width="16" height="16" fill="none" stroke="#000" stroke-width="2.5" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-        </svg>
-      </button>
+        <nav class="nav-actions">
+            <button class="btn-anunciar">Anunciar</button>
+            
+            <div class="nav-icons">
+                <button class="icon-btn" title="Favoritos">
+                    <span class="material-symbols-rounded">favorite</span>
+                </button>
+                <button class="icon-btn" title="Carrinho">
+                    <span class="material-symbols-rounded">shopping_cart</span>
+                </button>
+                <button class="icon-btn" id="user-btn" title="Minha Conta">
+                    <span class="material-symbols-rounded">person</span>
+                </button>
+            </div>
+        </nav>
     </div>
 
-    <!-- Ações do usuario - Área de interação -->
-    <nav class="nav-actions">
-      <button class="nav-link">
-        Categorias
-        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M6 9l6 6 6-6"/>
-        </svg>
-      </button>
-      <button class="nav-link">Blog</button>
-      <button class="btn-anunciar">Anunciar</button>
+    <div class="nav-sub">
+        <div class="nav-sub-inner">
+            <div class="nav-item"><button class="cat-btn">Consoles & Jogos</button></div>
+            <div class="nav-item"><button class="cat-btn">Livros & Mangás</button></div>
+            <div class="nav-item"><button class="cat-btn">Funkos & Figures</button></div>
 
-      <!-- SVG de Favoritos -->
-      <button class="icon-btn" aria-label="Favoritos">
-        <svg width="22" height="22" fill="none" stroke="#ccc" stroke-width="1.8" viewBox="0 0 24 24">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
-      </button>
+            <div class="nav-item has-submenu">
+                <button class="cat-btn">Vestuário</button>
+                <div class="mega-menu">
+                    <div class="mega-img-area">
+                        <img src="assets/vestuario.png" alt="Vestuário">
+                        <a href="#" class="mega-label"><span>CONFIRA ></span></a>
+                    </div>
+                    <div class="mega-links-area">
+                        <div class="mega-col">
+                            <h4>Vestuário</h4>
+                            <ul>
+                                <li><a href="#">Camisetas</a></li>
+                                <li><a href="#">Camisetas Infantis</a></li>
+                                <li><a href="#">Moletom e Inverno</a></li>
+                                <li><a href="#">Meias Geek</a></li>
+                            </ul>
+                            <a href="#" class="mega-all">VER TODOS</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Coleções</h4>
+                            <ul>
+                                <li><a href="#">Disney</a></li>
+                                <li><a href="#">Harry Potter</a></li>
+                                <li><a href="#">Marvel & DC</a></li>
+                                <li><a href="#">One Piece</a></li>
+                                <li><a href="#">Star Wars</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- SVG do Carrinho de compras -->
-      <button class="icon-btn" aria-label="Carrinho">
-        <svg width="22" height="22" fill="none" stroke="#ccc" stroke-width="1.8" viewBox="0 0 24 24">
-          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-        </svg>
-      </button>
+            <div class="nav-item has-submenu">
+                <button class="cat-btn">Decoração</button>
+                <div class="mega-menu">
+                    <div class="mega-img-area">
+                        <img src="assets/decor.jpg" alt="Decoração">
+                        <a href="#" class="mega-label"><span>CONFIRA ></span></a>
+                    </div>
+                    <div class="mega-links-area">
+                        <div class="mega-col">
+                            <h4>Casa & Decor</h4>
+                            <ul>
+                                <li><a href="#">Almofadas</a></li>
+                                <li><a href="#">Canecas Retro</a></li>
+                                <li><a href="#">Copos e Taças</a></li>
+                                <li><a href="#">Luminárias Pixel</a></li>
+                            </ul>
+                            <a href="#" class="mega-all">VER TODOS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- SVG do Hamburger - Botão de menu -->
-      <button class="icon-btn" id="hamburger-btn" aria-label="Menu">
-        <svg width="22" height="22" fill="none" stroke="#ccc" stroke-width="2" viewBox="0 0 24 24">
-          <line x1="3" y1="6"  x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
-    </nav>
-  </div>
-
-  <!-- Categorias submenu - Menu de categorias -->
-  <div class="nav-sub" role="navigation" aria-label="Categorias">
-    <div class="nav-sub-inner" id="cat-menu"></div>
-  </div>
+            <div class="nav-item has-submenu">
+                <button class="cat-btn">Acessórios</button>
+                <div class="mega-menu">
+                    <div class="mega-img-area">
+                        <img src="assets/acessorios.jpeg" alt="Acessórios">
+                        <a href="#" class="mega-label"><span>CONFIRA ></span></a>
+                    </div>
+                    <div class="mega-links-area">
+                        <div class="mega-col">
+                            <h4>Acessórios</h4>
+                            <ul>
+                                <li><a href="#">Bolsas e Mochilas</a></li>
+                                <li><a href="#">Bonés e Toucas</a></li>
+                                <li><a href="#">Chaveiros</a></li>
+                                <li><a href="#">Pins e Bottons</a></li>
+                            </ul>
+                            <a href="#" class="mega-all">VER TODOS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
-<!-- HERO BANNER - Seção de destaque -->
-<section id="hero">
-  <div class="hero-bg">
+<main>
+    <section id="hero">
+        <div class="hero-bg">
+            <img src="assets/banner-bg.jpg" alt="Banner Retro" class="hero-banner-img" />
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-title-sm">OFERTA IMPERDÍVEL!</div>
+                <div class="hero-title-lg">30% DE<br>DESCONTO</div>
+                <div class="hero-sub">EM TODAS AS COMPRAS ACIMA DE R$ 350,00</div>
+                <button class="hero-btn">▶ APROVEITE AGORA!</button>
+                <p class="hero-fine">*Desconto não cumulativo. Válido por tempo limitado.</p>
+            </div>
+            <div class="hero-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
 
-    <!-- Imagem destaque de fundo -->
-    <img src="assets/banner-bg.jpg" alt="" class="hero-banner-img" aria-hidden="true" />
+    <div class="content-wrapper">
+        <section class="products-section">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Mais populares</h2>
+                    <p class="section-sub">Os mais vendidos da semana</p>
+                </div>
+                <button class="see-more">Ver mais <span>›</span></button>
+            </div>
+            <div class="product-grid js-product-grid"></div>
+        </section>
 
-    <!-- Overlay de escurecimento -->
-    <div class="hero-overlay" aria-hidden="true"></div>
+        <section class="products-section">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Ofertas da semana</h2>
+                    <p class="section-sub">Preços especiais por tempo limitado</p>
+                </div>
+                <button class="see-more">Ver mais <span>›</span></button>
+            </div>
+            <div class="product-grid js-product-grid"></div>
+        </section>
 
-    <!-- Conteúdo central - Área de destaque -->
-    <div class="hero-content">
-      <div class="hero-star" aria-hidden="true"></div>
-      <div class="hero-title-sm">OFERTA IMPERDÍVEL!</div>
-      <div class="hero-title-lg">30% DE<br>DESCONTO</div>
-      <div class="hero-sub">EM TODAS AS COMPRAS ACIMA DE R$ 350,00</div>
-      <button class="hero-btn">&#9658; APROVEITE AGORA!</button>
-      <div class="hero-fine">
-        <span>*Desconto não cumulativo com outras promoções.</span>
-        <span>*Aplicam-se termos e condições. Válido por tempo limitado.</span>
-      </div>
+        <section class="products-section">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Navegue por franquias</h2>
+                    <p class="section-sub">Seus universos favoritos em um só lugar</p>
+                </div>
+                <button class="see-more">Ver mais <span>›</span></button>
+            </div>
+            <div class="product-grid js-product-grid"></div>
+        </section>
     </div>
+</main>
 
-  </div>
-
-  <!-- Pontinhos do carrossel -->
-  <div class="hero-dots" id="hero-dots"></div>
-</section>
-
-<!-- Grid de produtos - Lista -->
-<section id="products">
-  <div class="section-header">
-    <div>
-      <h2 class="section-title">Mais populares</h2>
-      <p class="section-sub">Os mais vendidos da semana</p>
-    </div>
-    <button class="see-more">Ver mais <span style="font-size:18px">›</span></button>
-  </div>
-  <div class="product-grid" id="product-grid"></div>
-</section>
-
-<!-- MOBILE MENU -->
-<div class="mobile-overlay" id="mobile-overlay" role="dialog" aria-modal="true" aria-label="Menu principal">
-  <button class="mobile-close" id="mobile-close" aria-label="Fechar menu">&times;</button>
-  <div class="mobile-cat-list" id="mobile-cat-list"></div>
-  <button class="btn-anunciar" style="width:fit-content">Anunciar</button>
-</div>
-
-<!-- rodapé -->
 <footer id="footer">
-  <div class="footer-main">
- 
-    <!-- Coluna: Sobre -->
-    <div class="footer-brand">
-      <img src="assets/logo.png" alt="Vault Experience" class="footer-logo" />
-      <p class="footer-desc">
-        Somos a solução para o mercado geek e retrô, disponibilizando uma plataforma moderna
-        que permite que o comprador receba o produto desejado e o vendedor receba pelo que
-        vendeu. Tudo isso com praticidade e segurança.
-      </p>
-      <div class="footer-socials">
-        <!-- Discord -->
-        <a href="#" class="social-btn" aria-label="Discord">    <!-- FALTA ADD OS LINKS RPZD--> 
-          <svg width="18" height="18" fill="none" stroke="#aaa" stroke-width="1.8" viewBox="0 0 24 24">
-            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
-          </svg>
-        </a>
-        <!-- Instagram -->
-        <a href="#" class="social-btn" aria-label="Instagram">  <!-- FALTA ADD OS LINKS RPZD -->
-          <svg width="18" height="18" fill="none" stroke="#aaa" stroke-width="1.8" viewBox="0 0 24 24">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-          </svg>
-        </a>
-      </div>
+    <div class="footer-main">
+        <div class="footer-brand">
+            <img src="assets/logo.png" alt="Vault Experience" class="footer-logo" />
+            <p class="footer-desc">Somos a solução para o mercado geek e retrô com praticidade e segurança.</p>
+        </div>
+        <div class="footer-col">
+            <p class="footer-col-title">Acesso Rápido</p>
+            <ul class="footer-links">
+                <li><a href="#">Anunciar</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Sobre nós</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <p class="footer-col-title">Suporte</p>
+            <ul class="footer-links">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Privacidade</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <p class="footer-col-title">Redes Sociais</p>
+            <ul class="footer-links">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Twitter (X)</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </div>
     </div>
- 
-    <!-- Coluna: Acesso Rápido -->
-    <div class="footer-col">
-      <p class="footer-col-title">Acesso Rápido</p>
-      <ul class="footer-links">
-        <li><a href="#">Anunciar</a></li>             <!-- FALTA ADD OS LINKS RPZD-->
-        <li><a href="#">Blog</a></li>                 <!-- FALTA ADD OS LINKS RPZD -->
-        <li><a href="#">Perguntas frequentes</a></li> <!-- FALTA ADD OS LINKS RPZD -->
-        <li><a href="#">Categorias</a></li>           <!-- FALTA ADD OS LINKS RPZD -->
-        <li><a href="#">Central de Ajuda</a></li>     <!-- FALTA ADD OS LINKS RPZD -->
-      </ul>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+        <p class="footer-copy">Copyright © <span>Vault Experience</span> since 2026</p>
+        <p class="footer-badge">PRESS START TO PLAY ▮</p>
     </div>
- 
-    <!-- Coluna: Como Funciona -->
-    <div class="footer-col">
-      <p class="footer-col-title">Como Funciona</p>
-      <ul class="footer-links">
-        <li><a href="#">Como funciona</a></li>          <!-- FALTA ADD OS LINKS -->
-        <li><a href="#">Vantagens</a></li>              <!-- FALTA ADD OS LINKS -->
-        <li><a href="#">Tarifas e prazos</a></li>       <!-- FALTA ADD OS LINKS -->
-        <li><a href="#">Formas de pagamento</a></li>    <!-- FALTA ADD OS LINKS -->
-        <li><a href="#">Verificador de contas</a></li>  <!-- FALTA ADD OS LINKS -->
-      </ul>
-    </div>
- 
-    <!-- Coluna: Institucional -->
-    <div class="footer-col">
-      <p class="footer-col-title">Institucional</p>
-      <ul class="footer-links">
-        <li><a href="#">Termos de uso</a></li>           <!-- FALTA ADD OS LINKS -->
-        <li><a href="#">Programa de recompensa</a></li>  <!-- FALTA ADD OS LINKS -->
-        <li><a href="#">Política de privacidade</a></li> <!-- FALTA ADD OS LINKS -->
-        <li><a href="#">Política de reembolso</a></li>   <!-- FALTA ADD OS LINKS -->
-        <li><a href="#">Trabalhe conosco</a></li>        <!-- FALTA ADD OS LINKS -->
-      </ul>
-    </div>
- 
-  </div>
- 
-  <hr class="footer-divider" />
- 
-  <div class="footer-bottom">
-    <p class="footer-copy">Copyright © <span>Vault Experience</span> since 2026</p>
-    <p class="footer-badge">PRESS START TO PLAY ▮</p>
-  </div>
 </footer>
+
 <script src="js/app.js"></script>
 </body>
 </html>
