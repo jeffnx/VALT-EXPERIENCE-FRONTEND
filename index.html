@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
     <link rel="stylesheet" href="css/global.css">
@@ -42,9 +42,31 @@
                 <button class="icon-btn" title="Carrinho">
                     <span class="material-symbols-rounded">shopping_cart</span>
                 </button>
-                <button class="icon-btn" id="user-btn" title="Minha Conta">
-                    <span class="material-symbols-rounded">person</span>
-                </button>
+                
+                <div class="user-menu-container">
+                    <button class="icon-btn" id="user-btn" title="Minha Conta">
+                        <span class="material-symbols-rounded">person</span>
+                    </button>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <div class="user-dropdown-header">
+                            <span class="user-name">Username</span>
+                            <span class="user-status">Online</span>
+                        </div>
+                        <hr class="dropdown-divider">
+                        <ul class="dropdown-list">
+                            <li><a href="#"><span class="material-symbols-rounded">storefront</span>Meus Anúncios</a></li>
+                            <li><a href="#"><span class="material-symbols-rounded">package</span>Meus Pedidos</a></li>
+                            <li><a href="#"><span class="material-symbols-rounded">account_balance_wallet</span>Carteira</a></li>
+                            <li><a href="#"><span class="material-symbols-rounded">manage_accounts</span>Minha Conta</a></li>
+                            <li><a href="#"><span class="material-symbols-rounded">shield</span>Segurança & Privacidade</a></li>
+                            <li><a href="#"><span class="material-symbols-rounded">help</span>Ajuda</a></li>
+                        </ul>
+                        <hr class="dropdown-divider">
+                        <ul class="dropdown-list">
+                            <li><a href="#" class="logout-link"><span class="material-symbols-rounded">logout</span>Sair</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </nav>
     </div>
@@ -195,34 +217,54 @@
         <div class="footer-brand">
             <img src="assets/logo.png" alt="Vault Experience" class="footer-logo" />
             <p class="footer-desc">Somos a solução para o mercado geek e retrô com praticidade e segurança.</p>
+            <div class="footer-social">
+                <a href="#" title="Instagram" class="social-icon-link">
+                    <img src="assets/instagram logo.svg" alt="Instagram" class="social-svg-icon" />
+                </a>
+                <a href="#" title="GitHub" class="social-icon-link">
+                    <img src="assets/github logo.svg" alt="GitHub" class="social-svg-icon" />
+                </a>
+            </div>
         </div>
+
         <div class="footer-col">
-            <p class="footer-col-title">Acesso Rápido</p>
+            <p class="footer-col-title">Institucional</p>
             <ul class="footer-links">
-                <li><a href="#">Anunciar</a></li>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Sobre nós</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <p class="footer-col-title">Suporte</p>
-            <ul class="footer-links">
-                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Quem Somos</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
                 <li><a href="#">Termos de Uso</a></li>
-                <li><a href="#">Privacidade</a></li>
-                <li><a href="#">Contato</a></li>
             </ul>
         </div>
+
         <div class="footer-col">
-            <p class="footer-col-title">Redes Sociais</p>
+            <p class="footer-col-title">Ajuda</p>
             <ul class="footer-links">
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Twitter (X)</a></li>
-                <li><a href="#">YouTube</a></li>
+                <li><a href="#">Fale Conosco</a></li>
+                <li><a href="#">Trocas e Devoluções</a></li>
+                <li><a href="#">Política de Frete Grátis</a></li>
+                <li><a href="#">FAQ</a></li>
             </ul>
         </div>
     </div>
+
     <hr class="footer-divider">
+
+    <div class="footer-trust-container">
+        <div class="trust-block">
+            <p class="trust-title">Formas de pagamento</p>
+            <div class="payment-badges">
+                <img src="assets/visa logo.svg" alt="Visa" class="payment-icon" title="Visa" />
+                <img src="assets/mastercard logo.svg" alt="Mastercard" class="payment-icon" title="Mastercard" />
+                <img src="assets/elo logo.svg" alt="Elo" class="payment-icon" title="Elo" />
+                <img src="assets/amex logo.svg" alt="American Express" class="payment-icon" title="American Express" />
+                <img src="assets/boleto logo.png" alt="Boleto Bancário" class="payment-icon" title="Boleto" />
+                <img src="assets/pix logo.jpg" alt="Pix" class="payment-icon" title="Pix" />
+            </div>
+        </div>
+    </div>
+
+    <hr class="footer-divider">
+
     <div class="footer-bottom">
         <p class="footer-copy">Copyright © <span>Vault Experience</span> since 2026</p>
         <p class="footer-badge">PRESS START TO PLAY ▮</p>
