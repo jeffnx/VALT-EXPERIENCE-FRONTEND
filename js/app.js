@@ -13,9 +13,11 @@ if (userBtn && userDropdown) {
     e.stopPropagation();
     userDropdown.classList.toggle('active');
   });
+
   document.addEventListener('click', () => {
     userDropdown.classList.remove('active');
   });
+
   userDropdown.addEventListener('click', e => e.stopPropagation());
 }
 
@@ -25,35 +27,38 @@ const MEGA_DATA = {
     header: 'Consoles & Jogos',
     links: [
       { name: 'PlayStation',  desc: 'PS4, PS5 e acessórios',       icon: 'ti-device-gamepad-2', badge: null },
-      { name: 'Xbox',         desc: 'Series X/S e Game Pass',       icon: 'ti-brand-xbox',       badge: { text: 'HOT', cls: 'badge-hot' } },
-      { name: 'Nintendo',     desc: 'Switch e portáteis',            icon: 'ti-device-nintendo',  badge: null },
-      { name: 'Retro',        desc: 'Mega Drive, SNES e mais',       icon: 'ti-cpu',              badge: { text: 'NEW', cls: 'badge-new' } },
-      { name: 'Jogos PC',     desc: 'Keys e mídia física',           icon: 'ti-device-desktop',   badge: null },
+      { name: 'Xbox',         desc: 'Series X/S e Game Pass',      icon: 'ti-brand-xbox',       badge: { text: 'HOT', cls: 'badge-hot' } },
+      { name: 'Nintendo',     desc: 'Switch e portáteis',          icon: 'ti-device-nintendo',  badge: null },
+      { name: 'Retro',        desc: 'Mega Drive, SNES e mais',     icon: 'ti-cpu',              badge: { text: 'NEW', cls: 'badge-new' } },
+      { name: 'Jogos PC',     desc: 'Keys e mídia física',         icon: 'ti-device-desktop',   badge: null },
     ],
     footer: 'Ver todos os consoles & jogos →'
   },
+
   'Livros & Mangas': {
     header: 'Livros & Mangás',
     links: [
-      { name: 'Mangá Shonen',  desc: 'Ação e aventura',         icon: 'ti-books',    badge: { text: 'HOT', cls: 'badge-hot' } },
-      { name: 'Mangá Seinen',  desc: 'Para público adulto',     icon: 'ti-book-2',   badge: null },
-      { name: 'Light Novels',  desc: 'Nacionais e importadas',  icon: 'ti-book',     badge: { text: 'NEW', cls: 'badge-new' } },
-      { name: 'HQs & Comics',  desc: 'Marvel, DC e independentes', icon: 'ti-writing', badge: null },
-      { name: 'Artbooks',      desc: 'Games, anime e cinema',   icon: 'ti-palette',  badge: null },
+      { name: 'Mangá Shonen',  desc: 'Ação e aventura',              icon: 'ti-books',    badge: { text: 'HOT', cls: 'badge-hot' } },
+      { name: 'Mangá Seinen',  desc: 'Para público adulto',          icon: 'ti-book-2',   badge: null },
+      { name: 'Light Novels',  desc: 'Nacionais e importadas',       icon: 'ti-book',     badge: { text: 'NEW', cls: 'badge-new' } },
+      { name: 'HQs & Comics',  desc: 'Marvel, DC e independentes',   icon: 'ti-writing',  badge: null },
+      { name: 'Artbooks',      desc: 'Games, anime e cinema',        icon: 'ti-palette',  badge: null },
     ],
     footer: 'Ver todos os livros & mangás →'
   },
+
   'Funkos & Figures': {
     header: 'Funkos & Figures',
     links: [
-      { name: 'Funko Pop',       desc: 'Anime, games e filmes',    icon: 'ti-ghost',      badge: { text: 'HOT', cls: 'badge-hot' } },
-      { name: 'Nendoroids',      desc: 'Good Smile Company',       icon: 'ti-mood-smile', badge: null },
-      { name: 'Figmas',          desc: 'Articulados e detalhados', icon: 'ti-man',        badge: null },
-      { name: 'Estatuetas',      desc: 'Colecionáveis premium',    icon: 'ti-crown',      badge: null },
-      { name: 'Edição Limitada', desc: 'Itens exclusivos',         icon: 'ti-diamond',    badge: { text: '15% OFF', cls: 'badge-off' } },
+      { name: 'Funko Pop',       desc: 'Anime, games e filmes',      icon: 'ti-ghost',      badge: { text: 'HOT', cls: 'badge-hot' } },
+      { name: 'Nendoroids',      desc: 'Good Smile Company',         icon: 'ti-mood-smile', badge: null },
+      { name: 'Figmas',          desc: 'Articulados e detalhados',   icon: 'ti-man',        badge: null },
+      { name: 'Estatuetas',      desc: 'Colecionáveis premium',      icon: 'ti-crown',      badge: null },
+      { name: 'Edição Limitada', desc: 'Itens exclusivos',           icon: 'ti-diamond',    badge: { text: '15% OFF', cls: 'badge-off' } },
     ],
     footer: 'Ver todos os funkos & figures →'
   },
+
   'Assinaturas & Keys': {
     header: 'Assinaturas & Keys',
     links: [
@@ -65,6 +70,7 @@ const MEGA_DATA = {
     ],
     footer: 'Ver todas as assinaturas →'
   },
+
   'Em alta': {
     header: 'Em Alta Agora',
     links: [
@@ -75,23 +81,25 @@ const MEGA_DATA = {
     ],
     footer: 'Ver tudo que está em alta →'
   },
+
   'Acessórios': {
     header: 'Acessórios',
     links: [
-      { name: 'Controles',            desc: 'Para todos os consoles',       icon: 'ti-device-gamepad', badge: null },
-      { name: 'Headsets',             desc: 'Som imersivo para games',      icon: 'ti-headphones',     badge: null },
-      { name: 'Mousepads & Teclados', desc: 'Setup gamer completo',         icon: 'ti-keyboard',       badge: { text: 'NEW', cls: 'badge-new' } },
-      { name: 'Casa & Decor',         desc: 'Almofadas, canecas e luminárias', icon: 'ti-home',        badge: null },
+      { name: 'Controles',            desc: 'Para todos os consoles',          icon: 'ti-device-gamepad', badge: null },
+      { name: 'Headsets',             desc: 'Som imersivo para games',         icon: 'ti-headphones',     badge: null },
+      { name: 'Mousepads & Teclados', desc: 'Setup gamer completo',            icon: 'ti-keyboard',       badge: { text: 'NEW', cls: 'badge-new' } },
+      { name: 'Casa & Decor',         desc: 'Almofadas, canecas e luminárias', icon: 'ti-home',           badge: null },
     ],
     footer: 'Ver todos os acessórios →'
   },
+
   'Softwares': {
     header: 'Softwares',
     links: [
-      { name: 'Antivírus',       desc: 'Proteção para seu PC',    icon: 'ti-shield',    badge: null },
-      { name: 'Produtividade',   desc: 'Office e ferramentas',    icon: 'ti-briefcase', badge: null },
-      { name: 'Edição & Design', desc: 'Adobe, Canva e mais',     icon: 'ti-vector',    badge: { text: '10% OFF', cls: 'badge-off' } },
-      { name: 'Utilitários',     desc: 'VPN, backup e otimização', icon: 'ti-tool',     badge: null },
+      { name: 'Antivírus',       desc: 'Proteção para seu PC',      icon: 'ti-shield',    badge: null },
+      { name: 'Produtividade',   desc: 'Office e ferramentas',      icon: 'ti-briefcase', badge: null },
+      { name: 'Edição & Design', desc: 'Adobe, Canva e mais',       icon: 'ti-vector',    badge: { text: '10% OFF', cls: 'badge-off' } },
+      { name: 'Utilitários',     desc: 'VPN, backup e otimização',  icon: 'ti-tool',      badge: null },
     ],
     footer: 'Ver todos os softwares →'
   }
@@ -100,96 +108,180 @@ const MEGA_DATA = {
 /* ── Menu de categorias ── */
 function buildCatMenu() {
   const container = document.getElementById('cat-menu');
+
   container.innerHTML = '';
 
   CATEGORIES.forEach(cat => {
     const data = MEGA_DATA[cat];
+
     const item = document.createElement('div');
     item.className = 'cat-item';
 
     const btn = document.createElement('button');
-    btn.className = 'cat-btn' + (cat === activeCategory ? ' active' : '');
+
+    btn.className =
+      'cat-btn' + (cat === activeCategory ? ' active' : '');
+
     btn.textContent = cat;
-    btn.addEventListener('click', () => {
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+
       activeCategory = cat;
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+
+      document.querySelectorAll('.cat-btn').forEach(b => {
+        b.classList.remove('active');
+      });
+
       btn.classList.add('active');
+
+      document.querySelectorAll('.cat-item').forEach(menuItem => {
+        if (menuItem !== item) {
+          menuItem.classList.remove('active');
+        }
+      });
+
+      item.classList.toggle('active');
     });
 
     let megaHtml = '';
+
     if (data) {
+
       const linksHtml = data.links.map(l => `
         <a href="#" class="mega-link">
-          <div class="mega-link-icon"><i class="ti ${l.icon}"></i></div>
+          <div class="mega-link-icon">
+            <i class="ti ${l.icon}"></i>
+          </div>
+
           <div>
             <div class="mega-link-name">${l.name}</div>
             <div class="mega-link-desc">${l.desc}</div>
           </div>
-          ${l.badge ? `<span class="mega-badge ${l.badge.cls}">${l.badge.text}</span>` : ''}
+
+          ${
+            l.badge
+              ? `<span class="mega-badge ${l.badge.cls}">${l.badge.text}</span>`
+              : ''
+          }
         </a>
       `).join('');
 
       megaHtml = `
         <div class="mega-menu">
           <div class="mega-menu-header">${data.header}</div>
-          <div class="mega-links">${linksHtml}</div>
-          <a href="#" class="mega-footer">${data.footer}</a>
+
+          <div class="mega-links">
+            ${linksHtml}
+          </div>
+
+          <a href="#" class="mega-footer">
+            ${data.footer}
+          </a>
         </div>
       `;
     }
 
     item.innerHTML = megaHtml;
+
     item.prepend(btn);
+
     container.appendChild(item);
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.cat-item').forEach(item => {
+      item.classList.remove('active');
+    });
   });
 }
 
 /* ── Menu Mobile ── */
 function buildMobileMenu() {
   const list = document.getElementById('mobile-cat-list');
+
   list.innerHTML = '';
+
   CATEGORIES.forEach(cat => {
     const btn = document.createElement('button');
+
     btn.textContent = cat;
-    if (cat === activeCategory) btn.classList.add('active');
+
+    if (cat === activeCategory) {
+      btn.classList.add('active');
+    }
+
     btn.addEventListener('click', () => {
       activeCategory = cat;
-      document.querySelectorAll('.mobile-cat-list button, .cat-btn').forEach(b => {
-        b.classList.toggle('active', b.textContent === cat);
-      });
+
+      document
+        .querySelectorAll('.mobile-cat-list button, .cat-btn')
+        .forEach(b => {
+          b.classList.toggle('active', b.textContent === cat);
+        });
+
       closeOverlay();
     });
+
     list.appendChild(btn);
   });
 }
 
-function openOverlay()  { document.getElementById('mobile-overlay').classList.add('open');    document.body.style.overflow = 'hidden'; }
-function closeOverlay() { document.getElementById('mobile-overlay').classList.remove('open'); document.body.style.overflow = '';       }
+function openOverlay() {
+  document.getElementById('mobile-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeOverlay() {
+  document.getElementById('mobile-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
 
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileClose  = document.getElementById('mobile-close');
-if (hamburgerBtn) hamburgerBtn.addEventListener('click', openOverlay);
-if (mobileClose)  mobileClose.addEventListener('click', closeOverlay);
+
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener('click', openOverlay);
+}
+
+if (mobileClose) {
+  mobileClose.addEventListener('click', closeOverlay);
+}
 
 /* ── Carrossel ── */
 function goToSlide(index) {
   const slides = document.querySelectorAll('.hero-slide');
   const dots   = document.querySelectorAll('.hero-dot');
+
   if (!slides.length) return;
-  slides.forEach((s, i) => s.classList.toggle('active', i === index));
-  dots.forEach((d, i)   => d.classList.toggle('active', i === index));
+
+  slides.forEach((s, i) => {
+    s.classList.toggle('active', i === index);
+  });
+
+  dots.forEach((d, i) => {
+    d.classList.toggle('active', i === index);
+  });
+
   activeSlide = index;
 }
 
 function buildDots() {
   const container = document.getElementById('hero-dots');
+
   if (!container) return;
+
   container.innerHTML = '';
+
   for (let i = 0; i < TOTAL_SLIDES; i++) {
     const btn = document.createElement('button');
+
     btn.className = 'hero-dot' + (i === 0 ? ' active' : '');
+
     btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+
     btn.addEventListener('click', () => goToSlide(i));
+
     container.appendChild(btn);
   }
 }
@@ -201,14 +293,22 @@ setInterval(() => {
 /* ── Cards skeleton ── */
 function buildCards() {
   const grids = document.querySelectorAll('.js-product-grid');
+
   if (grids.length === 0) return;
+
   grids.forEach(grid => {
     grid.innerHTML = '';
+
     for (let i = 0; i < TOTAL_CARDS; i++) {
       const card = document.createElement('div');
+
       card.className = 'card';
-      card.style.animation = 'slide-in .5s ease ' + (i * 0.08) + 's both';
+
+      card.style.animation =
+        'slide-in .5s ease ' + (i * 0.08) + 's both';
+
       card.style.cursor = 'pointer';
+
       card.innerHTML =
         '<div class="card-img"></div>' +
         '<div class="card-body">' +
@@ -216,36 +316,73 @@ function buildCards() {
           '<div class="card-line" style="height:11px;width:55%"></div>' +
           '<div class="card-line" style="height:18px;width:42%"></div>' +
         '</div>';
-      card.addEventListener('click', () => { window.location.href = 'produto.html'; });
+
+      card.addEventListener('click', () => {
+        window.location.href = 'produto.html';
+      });
+
       grid.appendChild(card);
     }
   });
 }
 
 /* ── Utilitários ── */
-const fmt = (n) => n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const fmt = (n) =>
+  n.toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
 
 function renderStars(media) {
   const cheia = Math.floor(media);
   const vazia = 5 - cheia;
+
   return `<div class="stars">` +
-    '★'.repeat(cheia).split('').map(() => `<span class="star full">★</span>`).join('') +
-    '★'.repeat(vazia).split('').map(() => `<span class="star empty">★</span>`).join('') +
+    '★'.repeat(cheia)
+      .split('')
+      .map(() => `<span class="star full">★</span>`)
+      .join('') +
+
+    '★'.repeat(vazia)
+      .split('')
+      .map(() => `<span class="star empty">★</span>`)
+      .join('') +
+
     `</div>`;
 }
 
 function stockLabel(status, qtd) {
-  if (status === 'low') return { dot: 'low', cls: 'stock-low', txt: `Apenas ${qtd} restantes!` };
-  return { dot: 'in', cls: 'stock-in', txt: 'Em estoque' };
+  if (status === 'low') {
+    return {
+      dot: 'low',
+      cls: 'stock-low',
+      txt: `Apenas ${qtd} restantes!`
+    };
+  }
+
+  return {
+    dot: 'in',
+    cls: 'stock-in',
+    txt: 'Em estoque'
+  };
 }
 
 /* ── Init ── */
 buildCatMenu();
-if (document.getElementById('mobile-cat-list'))               buildMobileMenu();
-if (document.getElementById('hero-dots'))                     buildDots();
-if (document.querySelectorAll('.js-product-grid').length)     buildCards();
+
+if (document.getElementById('mobile-cat-list')) {
+  buildMobileMenu();
+}
+
+if (document.getElementById('hero-dots')) {
+  buildDots();
+}
+
+if (document.querySelectorAll('.js-product-grid').length) {
+  buildCards();
+}
 
 window.onload = () => {
-    initInteractions();
-    populateGrids();
-}
+  initInteractions();
+  populateGrids();
+};
