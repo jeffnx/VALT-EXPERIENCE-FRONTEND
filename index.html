@@ -56,35 +56,135 @@
 
       <button class="icon-btn" id="hamburger-btn" aria-label="Menu"></button>
     
-      <!-- Perfil -->
+  <!-- Área de Login -->
 <div class="user-menu-container">
-  <button class="icon-btn" id="user-btn" title="Minha Conta">
-    <svg width="22" height="22" fill="none" stroke="#ccc" stroke-width="1.8" viewBox="0 0 24 24">
-      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-      <circle cx="12" cy="7" r="4"/>
-    </svg>
-  </button>
-  <div class="user-dropdown" id="user-dropdown">
-    <div class="user-dropdown-header">
-      <span class="user-name">Username</span>
-      <span class="user-status">Online</span>
+
+  <!-- BOTÃO ENTRAR -->
+  <div id="auth-area">
+
+    <button
+  class="login-btn"
+  id="login-btn"
+>
+
+  Entrar
+
+</button>
+
+  </div>
+
+  <!-- PERFIL -->
+  <div
+    class="user-menu hidden"
+    id="user-menu"
+  >
+
+    <button
+      class="icon-btn"
+      id="user-btn"
+      title="Minha Conta"
+    >
+
+      <svg width="22" height="22" fill="none" stroke="#ccc" stroke-width="1.8" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+
+    </button>
+
+    <div class="user-dropdown" id="user-dropdown">
+
+      <div class="user-dropdown-header">
+
+        <span
+          class="user-name"
+          id="username-display"
+        >
+          Username
+        </span>
+
+        <span class="user-status">
+          Online
+        </span>
+
+      </div>
+
+      <hr class="dropdown-divider">
+
+      <ul class="dropdown-list">
+
+        <li>
+          <a href="#">
+            <span class="material-symbols-rounded">storefront</span>
+            Meus Anúncios
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <span class="material-symbols-rounded">package</span>
+            Meus Pedidos
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <span class="material-symbols-rounded">account_balance_wallet</span>
+            Carteira
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <span class="material-symbols-rounded">manage_accounts</span>
+            Minha Conta
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <span class="material-symbols-rounded">shield</span>
+            Segurança & Privacidade
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <span class="material-symbols-rounded">help</span>
+            Ajuda
+          </a>
+        </li>
+
+      </ul>
+
+      <hr class="dropdown-divider">
+
+      <ul class="dropdown-list">
+
+        <li>
+
+          <a
+            href="#"
+            class="logout-link"
+            id="logout-btn"
+          >
+
+            <span class="material-symbols-rounded">
+              logout
+            </span>
+
+            Sair
+
+          </a>
+
+        </li>
+
+      </ul>
+
     </div>
-    <hr class="dropdown-divider">
-    <ul class="dropdown-list">
-      <li><a href="#"><span class="material-symbols-rounded">storefront</span>Meus Anúncios</a></li>
-      <li><a href="#"><span class="material-symbols-rounded">package</span>Meus Pedidos</a></li>
-      <li><a href="#"><span class="material-symbols-rounded">account_balance_wallet</span>Carteira</a></li>
-      <li><a href="#"><span class="material-symbols-rounded">manage_accounts</span>Minha Conta</a></li>
-      <li><a href="#"><span class="material-symbols-rounded">shield</span>Segurança & Privacidade</a></li>
-      <li><a href="#"><span class="material-symbols-rounded">help</span>Ajuda</a></li>
-     </ul>
-     <hr class="dropdown-divider">
-       <ul class="dropdown-list">
-          <li><a href="#" class="logout-link"><span class="material-symbols-rounded">logout</span>Sair</a></li>
-        </ul>
-       </div>
-     </div>
-   </nav> 
+
+  </div>
+
 </div>
 
   <!-- Categorias submenu - Menu de categorias -->

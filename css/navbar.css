@@ -238,3 +238,30 @@
   color: var(--yellow);
   border-bottom-color: var(--yellow);
 }
+
+.hidden {
+  display: none !important;
+}
+
+#auth-area {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  height: 42px;
+  padding: 0 26px;
+  border-radius: 999px;
+  border: 1px solid #2d2d2d;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.login-btn:hover {
+  background: var(--yellow-dark);
+  color: var(--black);
+}

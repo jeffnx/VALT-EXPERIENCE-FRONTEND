@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Criar Conta | Vault Experience</title>
+
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/register.css">
+
+</head>
+
+<body>
+
+  <main class="register-page">
+
+    <!-- VOLTAR -->
+    <a href="login.html" class="back-button">
+      <i class="ti ti-arrow-left"></i>
+    </a>
+
+    <!-- CARD -->
+    <section class="register-card">
+
+      <!-- LOGO -->
+      <div class="register-logo">
+        <img src="assets/logo.png" alt="Vault Experience">
+      </div>
+
+      <!-- TEXTO -->
+      <p class="register-subtitle">
+        Nos informe alguns dados para que possamos melhorar sua experiência.
+      </p>
+
+      <!-- FORM -->
+      <form id="register-form">
+
+        <!-- NOME + SOBRENOME -->
+        <div class="double-input">
+
+          <div class="input-group">
+            <label>Nome</label>
+            <input type="text" placeholder="Nome" required>
+          </div>
+
+          <div class="input-group">
+            <label>Sobrenome</label>
+            <input type="text" placeholder="Sobrenome" required>
+          </div>
+
+        </div>
+
+        <!-- DATA NASCIMENTO -->
+        <div class="input-group">
+
+          <label>Data de nascimento</label>
+
+          <div class="triple-input">
+
+            <select id="birth-day">
+              <option value="">Dia</option>
+            </select>
+
+            <select id="birth-month">
+              <option value="">Mês</option>
+              <option>Janeiro</option>
+              <option>Fevereiro</option>
+              <option>Março</option>
+              <option>Abril</option>
+              <option>Maio</option>
+              <option>Junho</option>
+              <option>Julho</option>
+              <option>Agosto</option>
+              <option>Setembro</option>
+              <option>Outubro</option>
+              <option>Novembro</option>
+              <option>Dezembro</option>
+            </select>
+
+            <select id="birth-year">
+              <option value="">Ano</option>
+            </select>
+
+          </div>
+
+        </div>
+
+        <!-- CONTATO -->
+        <div class="input-group">
+          <label>Email ou celular</label>
+
+          <span class="input-info">
+            Você poderá receber notificações.
+          </span>
+
+          <input type="text" placeholder="Digite seu email ou celular" required>
+        </div>
+
+        <!-- USUÁRIO -->
+        <div class="input-group">
+          <label>Usuário</label>
+          <input id="username" type="text" placeholder="Digite seu usuário" required>
+        </div>
+
+        <!-- SENHA -->
+        <div class="input-group">
+          <label>Senha</label>
+
+          <input id="password" type="password" placeholder="Digite sua senha" required>
+
+          <span class="input-info password-rules">
+            A senha deve conter:
+            <br><br>
+            • 8+ caracteres<br>
+            • 1 letra maiúscula<br>
+            • 1 letra minúscula<br>
+            • 1 número<br>
+            • 1 caractere especial
+          </span>
+        </div>
+
+        <!-- BOTÃO -->
+        <button id="register-btn" type="submit" disabled>
+          Cadastrar
+        </button>
+
+      </form>
+
+      <!-- LOGIN -->
+      <p class="login-link">
+        Já tem uma conta?
+        <a href="login.html">Entrar</a>
+      </p>
+
+    </section>
+
+  </main>
+
+  <script src="js/register.js"></script>
+
+</body>
+
+</html>

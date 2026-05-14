@@ -386,3 +386,103 @@ window.onload = () => {
   initInteractions();
   populateGrids();
 };
+
+/* LOGIN */
+
+const authArea = document.getElementById('auth-area');
+
+const userMenu = document.getElementById('user-menu');
+
+const logoutBtn = document.getElementById('logout-btn');
+
+const usernameDisplay =
+  document.getElementById('username-display');
+
+const loginBtn =
+  document.getElementById('login-btn');
+
+const isLogged =
+  localStorage.getItem('vault_logged');
+
+const username =
+  localStorage.getItem('vault_user');
+
+if (loginBtn) {
+
+  loginBtn.addEventListener('click', () => {
+
+    window.location.href = 'login.html';
+
+  });
+
+}
+
+if (isLogged === 'true') {
+
+  if (authArea) {
+    authArea.classList.add('hidden');
+  }
+
+  if (userMenu) {
+    userMenu.classList.remove('hidden');
+  }
+
+  if (usernameDisplay && username) {
+    usernameDisplay.textContent = username;
+  }
+
+}
+
+if (logoutBtn) {
+
+  logoutBtn.addEventListener('click', e => {
+
+    e.preventDefault();
+
+    localStorage.removeItem('vault_logged');
+
+    localStorage.removeItem('vault_user');
+
+    window.location.reload();
+
+  });
+
+/* SE ESTIVER LOGADO */
+
+if (isLogged === 'true') {
+
+  if (loginButton) {
+
+    loginButton.style.display =
+      'none';
+
+  }
+
+  if (userMenu) {
+
+    userMenu.style.display =
+      'flex';
+
+  }
+
+}
+
+/* SE NÃO ESTIVER */
+
+else {
+
+  if (loginButton) {
+
+    loginButton.style.display =
+      'flex';
+
+  }
+
+  if (userMenu) {
+
+    userMenu.style.display =
+      'none';
+
+  }
+
+}}

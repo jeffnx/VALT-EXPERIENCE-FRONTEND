@@ -42,3 +42,48 @@ body {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* SCROLLBAR */
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+
+  width: 10px;
+  height: 10px;
+
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+
+  background: var(--black);
+
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--yellow),
+      var(--yellow-dark)
+    );
+
+  border-radius: 20px;
+
+  border: 2px solid var(--black);
+
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffe27a,
+      var(--yellow)
+    );
+
+}
