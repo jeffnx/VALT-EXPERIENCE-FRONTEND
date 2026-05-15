@@ -304,6 +304,28 @@ function renderPurchaseBox() {
         </div>
       </div>
 
+      <!-- SEÇÃO DE LANCE -->
+      <div class="lance-section">
+        <div class="lance-header">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M2 21l4.5-4.5"/></svg>
+          Fazer uma oferta
+        </div>
+        <div class="lance-chips">
+          <button class="lance-chip" data-add="50">+ R$ 50,00</button>
+          <button class="lance-chip" data-add="100">+ R$ 100,00</button>
+          <button class="lance-chip" data-add="150">+ R$ 150,00</button>
+          <button class="lance-chip" data-add="200">+ R$ 200,00</button>
+        </div>
+        <div class="lance-input-row">
+          <span class="lance-prefix">R$</span>
+          <input id="lance-input" class="lance-input" type="number" placeholder="Digite seu valor" min="1" step="0.01">
+          <button id="btn-lance" class="btn-lance">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M2 21l4.5-4.5"/></svg>
+            Dar lance
+          </button>
+        </div>
+      </div>
+
       <div class="cta-stack">
         <button class="btn-buy">⚡ Comprar agora</button>
         <button class="btn-cart">
@@ -500,6 +522,51 @@ function bindEvents() {
       document.querySelectorAll('.cond-tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
     });
+  });
+
+  /*--- Lance / Oferta ---*/
+  const lanceInput = document.getElementById('lance-input');
+  const btnLance   = document.getElementById('btn-lance');
+
+  /* Chips de incremento */
+  document.querySelectorAll('.lance-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const add      = parseFloat(chip.dataset.add);
+      const current  = parseFloat(lanceInput.value) || 0;
+      lanceInput.value = (current + add).toFixed(2);
+      lanceInput.dispatchEvent(new Event('input'));
+    });
+  });
+
+  /* Mostrar/esconder estado do botão */
+  lanceInput.addEventListener('input', () => {
+    const val = parseFloat(lanceInput.value);
+    btnLance.disabled = !(val > 0);
+  });
+  btnLance.disabled = true;
+
+  /* Enviar lance */
+  btnLance.addEventListener('click', () => {
+    const val = parseFloat(lanceInput.value);
+    if (!val || val <= 0) return;
+
+    const fmtVal = val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    /* Feedback visual */
+    btnLance.textContent = '✓ Lance enviado!';
+    btnLance.classList.add('lance-enviado');
+    btnLance.disabled = true;
+
+    /* Toast de confirmação */
+    const toast = document.createElement('div');
+    toast.className = 'lance-toast';
+    toast.innerHTML = `<strong>Lance de ${fmtVal} enviado!</strong><br>O vendedor foi notificado e irá responder em breve.`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 10);
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 400);
+    }, 4000);
   });
 }
 
