@@ -73,29 +73,51 @@
 
           <div class="triple-input">
 
-            <select id="birth-day">
-              <option value="">Dia</option>
-            </select>
+            <!-- SELECT CUSTOMIZADO: DIA -->
+            <div class="custom-select" id="birth-day-select">
+              <div class="custom-select__trigger">
+                <span class="custom-select__value" data-placeholder="Dia">Dia</span>
+                <svg class="custom-select__arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <div class="custom-select__dropdown">
+                <div class="custom-select__list" id="birth-day-list"></div>
+              </div>
+            </div>
 
-            <select id="birth-month">
-              <option value="">Mês</option>
-              <option>Janeiro</option>
-              <option>Fevereiro</option>
-              <option>Março</option>
-              <option>Abril</option>
-              <option>Maio</option>
-              <option>Junho</option>
-              <option>Julho</option>
-              <option>Agosto</option>
-              <option>Setembro</option>
-              <option>Outubro</option>
-              <option>Novembro</option>
-              <option>Dezembro</option>
-            </select>
+            <!-- SELECT CUSTOMIZADO: MÊS -->
+            <div class="custom-select" id="birth-month-select">
+              <div class="custom-select__trigger">
+                <span class="custom-select__value" data-placeholder="Mês">Mês</span>
+                <svg class="custom-select__arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <div class="custom-select__dropdown">
+                <div class="custom-select__list">
+                  <div class="custom-select__option" data-value="Janeiro">Janeiro</div>
+                  <div class="custom-select__option" data-value="Fevereiro">Fevereiro</div>
+                  <div class="custom-select__option" data-value="Março">Março</div>
+                  <div class="custom-select__option" data-value="Abril">Abril</div>
+                  <div class="custom-select__option" data-value="Maio">Maio</div>
+                  <div class="custom-select__option" data-value="Junho">Junho</div>
+                  <div class="custom-select__option" data-value="Julho">Julho</div>
+                  <div class="custom-select__option" data-value="Agosto">Agosto</div>
+                  <div class="custom-select__option" data-value="Setembro">Setembro</div>
+                  <div class="custom-select__option" data-value="Outubro">Outubro</div>
+                  <div class="custom-select__option" data-value="Novembro">Novembro</div>
+                  <div class="custom-select__option" data-value="Dezembro">Dezembro</div>
+                </div>
+              </div>
+            </div>
 
-            <select id="birth-year">
-              <option value="">Ano</option>
-            </select>
+            <!-- SELECT CUSTOMIZADO: ANO -->
+            <div class="custom-select" id="birth-year-select">
+              <div class="custom-select__trigger">
+                <span class="custom-select__value" data-placeholder="Ano">Ano</span>
+                <svg class="custom-select__arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <div class="custom-select__dropdown">
+                <div class="custom-select__list" id="birth-year-list"></div>
+              </div>
+            </div>
 
           </div>
 
@@ -127,11 +149,11 @@
           <span class="input-info password-rules">
             A senha deve conter:
             <br><br>
-            • 8+ caracteres<br>
-            • 1 letra maiúscula<br>
-            • 1 letra minúscula<br>
-            • 1 número<br>
-            • 1 caractere especial
+            <span id="rule-length">• 8+ caracteres</span><br>
+            <span id="rule-upper">• 1 letra maiúscula</span><br>
+            <span id="rule-lower">• 1 letra minúscula</span><br>
+            <span id="rule-number">• 1 número</span><br>
+            <span id="rule-special">• 1 caractere especial</span>
           </span>
         </div>
 
