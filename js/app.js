@@ -4,7 +4,7 @@ let activeSlide    = 0;
 const TOTAL_SLIDES = 3;
 const TOTAL_CARDS  = 5;
 
-/* ── Dropdown de perfil ── */
+/* --- Dropdown de perfil ---*/
 const userBtn      = document.getElementById('user-btn');
 const userDropdown = document.getElementById('user-dropdown');
 
@@ -21,7 +21,7 @@ if (userBtn && userDropdown) {
   userDropdown.addEventListener('click', e => e.stopPropagation());
 }
 
-/* ── Submenu de categorias & dados mega menu ── */
+/* --- Submenu de categorias & dados mega menu --- */
 const MEGA_DATA = {
   'Consoles & Jogos': {
     header: 'Consoles & Jogos',
@@ -105,12 +105,58 @@ const MEGA_DATA = {
   }
 };
 
-/* ── Menu de categorias ── */
+/* --- Slug maps para URLs do catálogo --- */
+const CAT_SLUG = {
+  'Consoles & Jogos':   'consoles-jogos',
+  'Livros & Mangas':    'livros-mangas',
+  'Funkos & Figures':   'funkos-figures',
+  'Assinaturas & Keys': 'assinaturas-keys',
+  'Em alta':            'em-alta',
+  'Acessórios':         'acessorios',
+  'Softwares':          'softwares',
+};
+
+const SUBCAT_SLUG = {
+  'PlayStation':          'playstation',
+  'Xbox':                 'xbox',
+  'Nintendo':             'nintendo',
+  'Retro':                'retro',
+  'Jogos PC':             'jogos-pc',
+  'Mangá Shonen':         'manga-shonen',
+  'Mangá Seinen':         'manga-seinen',
+  'Light Novels':         'light-novels',
+  'HQs & Comics':         'hqs-comics',
+  'Artbooks':             'artbooks',
+  'Funko Pop':            'funko-pop',
+  'Nendoroids':           'nendoroids',
+  'Figmas':               'figmas',
+  'Estatuetas':           'estatuetas',
+  'Edição Limitada':      'edicao-limitada',
+  'PlayStation Plus':     'ps-plus',
+  'Xbox Game Pass':       'game-pass',
+  'Nintendo Online':      'nintendo-online',
+  'Steam Gift Cards':     'steam',
+  'EA Play':              'ea-play',
+  'Mais Vendidos':        'mais-vendidos',
+  'Novidades':            'novidades',
+  'Promoções':            'promocoes',
+  'Pré-venda':            'pre-venda',
+  'Controles':            'controles',
+  'Headsets':             'headsets',
+  'Mousepads & Teclados': 'mousepads-teclados',
+  'Casa & Decor':         'casa-decor',
+  'Antivírus':            'antivirus',
+  'Produtividade':        'produtividade',
+  'Edição & Design':      'edicao-design',
+  'Utilitários':          'utilitarios',
+};
+
+/* --- Menu de categorias --- */
 function buildCatMenu() {
   const container = document.getElementById('cat-menu');
+  if (!container) return;
 
   container.innerHTML = '';
-
   CATEGORIES.forEach(cat => {
     const data = MEGA_DATA[cat];
 
@@ -118,15 +164,11 @@ function buildCatMenu() {
     item.className = 'cat-item';
 
     const btn = document.createElement('button');
-
-    btn.className =
-      'cat-btn' + (cat === activeCategory ? ' active' : '');
-
+    btn.className = 'cat-btn' + (cat === activeCategory ? ' active' : '');
     btn.textContent = cat;
 
     btn.addEventListener('click', e => {
       e.stopPropagation();
-
       activeCategory = cat;
 
       document.querySelectorAll('.cat-btn').forEach(b => {
@@ -147,35 +189,35 @@ function buildCatMenu() {
     let megaHtml = '';
 
     if (data) {
+      const catSlugPai = CAT_SLUG[cat] || cat.toLowerCase().replace(' ', '-');
 
-      const linksHtml = data.links.map(l => `
-        <a href="#" class="mega-link">
-          <div class="mega-link-icon">
-            <i class="ti ${l.icon}"></i>
-          </div>
-
-          <div>
-            <div class="mega-link-name">${l.name}</div>
-            <div class="mega-link-desc">${l.desc}</div>
-          </div>
-
-          ${
-            l.badge
-              ? `<span class="mega-badge ${l.badge.cls}">${l.badge.text}</span>`
-              : ''
-          }
-        </a>
-      `).join('');
+      const linksHtml = data.links.map(l => {
+        const subSlug = SUBCAT_SLUG[l.name] || l.name.toLowerCase().split(' ').join('-');
+        const destinoUrl = `categorias.html?cat=${catSlugPai}&sub=${subSlug}`;
+        
+        return `
+            <a href="${destinoUrl}" 
+               onclick="e.stopPropagation(); window.location.href='${destinoUrl}'; return false;" 
+               class="mega-link">
+                <div class="mega-link-icon">
+                    <i class="ti ${l.icon}"></i>
+                </div>
+                <div>
+                    <div class="mega-link-name">${l.name}</div>
+                    <div class="mega-link-desc">${l.desc}</div>
+                </div>
+                ${l.badge ? `<span class="mega-badge ${l.badge.cls}">${l.badge.text}</span>` : ''}
+            </a>
+        `;
+      }).join('');
 
       megaHtml = `
         <div class="mega-menu">
           <div class="mega-menu-header">${data.header}</div>
-
           <div class="mega-links">
             ${linksHtml}
           </div>
-
-          <a href="#" class="mega-footer">
+          <a href="categorias.html?cat=${catSlugPai}" class="mega-footer">
             ${data.footer}
           </a>
         </div>
@@ -183,9 +225,7 @@ function buildCatMenu() {
     }
 
     item.innerHTML = megaHtml;
-
     item.prepend(btn);
-
     container.appendChild(item);
   });
 
@@ -196,15 +236,14 @@ function buildCatMenu() {
   });
 }
 
-/* ── Menu Mobile ── */
+/* --- Menu Mobile --- */
 function buildMobileMenu() {
   const list = document.getElementById('mobile-cat-list');
+  if (!list) return;
 
   list.innerHTML = '';
-
   CATEGORIES.forEach(cat => {
     const btn = document.createElement('button');
-
     btn.textContent = cat;
 
     if (cat === activeCategory) {
@@ -213,13 +252,9 @@ function buildMobileMenu() {
 
     btn.addEventListener('click', () => {
       activeCategory = cat;
-
-      document
-        .querySelectorAll('.mobile-cat-list button, .cat-btn')
-        .forEach(b => {
-          b.classList.toggle('active', b.textContent === cat);
-        });
-
+      document.querySelectorAll('.mobile-cat-list button, .cat-btn').forEach(b => {
+        b.classList.toggle('active', b.textContent === cat);
+      });
       closeOverlay();
     });
 
@@ -248,17 +283,15 @@ if (mobileClose) {
   mobileClose.addEventListener('click', closeOverlay);
 }
 
-/* ── Carrossel ── */
+/* --- Carrossel --- */
 function goToSlide(index) {
   const slides = document.querySelectorAll('.hero-slide');
   const dots   = document.querySelectorAll('.hero-dot');
-
   if (!slides.length) return;
 
   slides.forEach((s, i) => {
     s.classList.toggle('active', i === index);
   });
-
   dots.forEach((d, i) => {
     d.classList.toggle('active', i === index);
   });
@@ -268,20 +301,14 @@ function goToSlide(index) {
 
 function buildDots() {
   const container = document.getElementById('hero-dots');
-
   if (!container) return;
 
   container.innerHTML = '';
-
   for (let i = 0; i < TOTAL_SLIDES; i++) {
     const btn = document.createElement('button');
-
     btn.className = 'hero-dot' + (i === 0 ? ' active' : '');
-
     btn.setAttribute('aria-label', 'Slide ' + (i + 1));
-
     btn.addEventListener('click', () => goToSlide(i));
-
     container.appendChild(btn);
   }
 }
@@ -290,25 +317,18 @@ setInterval(() => {
   goToSlide((activeSlide + 1) % TOTAL_SLIDES);
 }, 7000);
 
-/* ── Cards skeleton ── */
+/* --- Cards skeleton --- */
 function buildCards() {
   const grids = document.querySelectorAll('.js-product-grid');
-
   if (grids.length === 0) return;
 
   grids.forEach(grid => {
     grid.innerHTML = '';
-
     for (let i = 0; i < TOTAL_CARDS; i++) {
       const card = document.createElement('div');
-
       card.className = 'card';
-
-      card.style.animation =
-        'slide-in .5s ease ' + (i * 0.08) + 's both';
-
+      card.style.animation = 'slide-in .5s ease ' + (i * 0.08) + 's both';
       card.style.cursor = 'pointer';
-
       card.innerHTML =
         '<div class="card-img"></div>' +
         '<div class="card-body">' +
@@ -326,7 +346,7 @@ function buildCards() {
   });
 }
 
-/* ── Utilitários ── */
+/* --- Utilitários --- */
 const fmt = (n) =>
   n.toLocaleString('pt-BR', {
     minimumFractionDigits: 2,
@@ -336,38 +356,20 @@ const fmt = (n) =>
 function renderStars(media) {
   const cheia = Math.floor(media);
   const vazia = 5 - cheia;
-
   return `<div class="stars">` +
-    '★'.repeat(cheia)
-      .split('')
-      .map(() => `<span class="star full">★</span>`)
-      .join('') +
-
-    '★'.repeat(vazia)
-      .split('')
-      .map(() => `<span class="star empty">★</span>`)
-      .join('') +
-
+    '★'.repeat(cheia).split('').map(() => `<span class="star full">★</span>`).join('') +
+    '★'.repeat(vazia).split('').map(() => `<span class="star empty">★</span>`).join('') +
     `</div>`;
 }
 
 function stockLabel(status, qtd) {
   if (status === 'low') {
-    return {
-      dot: 'low',
-      cls: 'stock-low',
-      txt: `Apenas ${qtd} restantes!`
-    };
+    return { dot: 'low', cls: 'stock-low', txt: `Apenas ${qtd} restantes!` };
   }
-
-  return {
-    dot: 'in',
-    cls: 'stock-in',
-    txt: 'Em estoque'
-  };
+  return { dot: 'in', cls: 'stock-in', txt: 'Em estoque' };
 }
 
-/* ── Init ── */
+/* --- Init Executions --- */
 buildCatMenu();
 
 if (document.getElementById('mobile-cat-list')) {
@@ -383,106 +385,50 @@ if (document.querySelectorAll('.js-product-grid').length) {
 }
 
 window.onload = () => {
-  initInteractions();
-  populateGrids();
+  if (typeof initInteractions === 'function') {
+    initInteractions();
+  }
+  if (typeof populateGrids === 'function') {
+    populateGrids();
+  }
 };
 
-/* LOGIN */
-
+/* --- LOGIN CONTROL & DOM MANIPULATION --- */
 const authArea = document.getElementById('auth-area');
-
 const userMenu = document.getElementById('user-menu');
-
 const logoutBtn = document.getElementById('logout-btn');
+const usernameDisplay = document.getElementById('username-display');
+const loginBtn = document.getElementById('login-btn');
 
-const usernameDisplay =
-  document.getElementById('username-display');
-
-const loginBtn =
-  document.getElementById('login-btn');
-
-const isLogged =
-  localStorage.getItem('vault_logged');
-
-const username =
-  localStorage.getItem('vault_user');
+const isLogged = localStorage.getItem('vault_logged');
+const username = localStorage.getItem('vault_user');
 
 if (loginBtn) {
-
   loginBtn.addEventListener('click', () => {
-
     window.location.href = 'login.html';
-
   });
-
 }
 
+
 if (isLogged === 'true') {
-
-  if (authArea) {
-    authArea.classList.add('hidden');
-  }
-
-  if (userMenu) {
-    userMenu.classList.remove('hidden');
-  }
-
-  if (usernameDisplay && username) {
-    usernameDisplay.textContent = username;
-  }
-
+  if (authArea) authArea.classList.add('hidden');
+  if (userMenu) userMenu.classList.remove('hidden');
+  if (usernameDisplay && username) usernameDisplay.textContent = username;
 }
 
 if (logoutBtn) {
-
   logoutBtn.addEventListener('click', e => {
-
     e.preventDefault();
-
     localStorage.removeItem('vault_logged');
-
     localStorage.removeItem('vault_user');
-
     window.location.reload();
-
   });
-
-/* SE ESTIVER LOGADO */
-
-if (isLogged === 'true') {
-
-  if (loginButton) {
-
-    loginButton.style.display =
-      'none';
-
-  }
-
-  if (userMenu) {
-
-    userMenu.style.display =
-      'flex';
-
-  }
-
 }
 
-/* SE NÃO ESTIVER */
-
-else {
-
-  if (loginButton) {
-
-    loginButton.style.display =
-      'flex';
-
-  }
-
-  if (userMenu) {
-
-    userMenu.style.display =
-      'none';
-
-  }
-
-}}
+if (isLogged === 'true') {
+  if (loginBtn) loginBtn.style.display = 'none';
+  if (userMenu) userMenu.style.display = 'flex';
+} else {
+  if (loginBtn) loginBtn.style.display = '';
+  if (userMenu) userMenu.style.display = 'none';
+}

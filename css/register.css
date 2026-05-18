@@ -16,10 +16,7 @@
   padding: 80px 20px;
 }
 
-/* ========================= */
-/* SCROLLBAR (GLOBAL FIXADA) */
-/* ========================= */
-
+/*--- SCROLLBAR (GLOBAL FIXADA) ---*/
 html,
 body,
 .register-page,
@@ -68,10 +65,8 @@ body::-webkit-scrollbar-thumb:hover,
   );
 }
 
-/* ========================= */
-/* BOTÃO VOLTAR */
-/* ========================= */
 
+/*--- BOTÃO VOLTAR ---*/
 .back-button {
 
   position: absolute;
@@ -105,10 +100,7 @@ body::-webkit-scrollbar-thumb:hover,
   box-shadow: 0 10px 25px rgba(255, 204, 0, .10);
 }
 
-/* ========================= */
-/* CARD */
-/* ========================= */
-
+/*--- CARD ---*/
 .register-card {
 
   width: 100%;
@@ -122,6 +114,7 @@ body::-webkit-scrollbar-thumb:hover,
 
   border: 1px solid rgba(255, 204, 0, .08);
 
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 
   border-radius: 32px;
@@ -136,21 +129,19 @@ body::-webkit-scrollbar-thumb:hover,
   margin-bottom: 120px;
 }
 
-/* LOGO */
+/*--- LOGO ---*/
 
 .register-logo {
   display: flex;
   justify-content: center;
   margin-bottom: 35px;
 }
-
 .register-logo img {
   width: 115px;
   filter: drop-shadow(0 0 18px rgba(255, 204, 0, .08));
 }
 
-/* SUBTEXTO */
-
+/*--- SUBTEXTO ---*/
 .register-subtitle {
   text-align: center;
   color: var(--gray-300);
@@ -159,24 +150,21 @@ body::-webkit-scrollbar-thumb:hover,
   margin-bottom: 45px;
 }
 
-/* FORM */
-
+/*--- FORM ---*/
 #register-form {
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
-/* INPUT LAYOUT */
-
+/*--- INPUT LAYOUT ---*/
 .double-input,
 .triple-input {
   display: flex;
   gap: 16px;
 }
 
-/* INPUT GROUP */
-
+/*--- INPUT GROUP ---*/
 .input-group {
   display: flex;
   flex-direction: column;
@@ -184,8 +172,7 @@ body::-webkit-scrollbar-thumb:hover,
   width: 100%;
 }
 
-/* LABEL */
-
+/*--- LABEL ---*/
 .input-group label {
   font-size: 15px;
   font-weight: 700;
@@ -193,18 +180,14 @@ body::-webkit-scrollbar-thumb:hover,
   color: var(--yellow);
 }
 
-/* INFO */
-
+/*--- INFO ---*/
 .input-info {
   font-size: 13px;
   line-height: 1.8;
   color: var(--gray-300);
 }
 
-/* ========================= */
-/* INPUTS                    */
-/* ========================= */
-
+/*--- INPUTS ---*/
 .input-group input {
 
   width: 100%;
@@ -233,13 +216,13 @@ body::-webkit-scrollbar-thumb:hover,
   transition: .2s ease;
 }
 
-/* PLACEHOLDER */
+/*--- PLACEHOLDER ---*/
 
 .input-group input::placeholder {
   color: var(--gray-400);
 }
 
-/* FOCUS */
+/* --- FOCUS --- */
 
 .input-group input:focus {
   border-color: var(--yellow);
@@ -247,10 +230,8 @@ body::-webkit-scrollbar-thumb:hover,
   transform: translateY(-1px);
 }
 
-/* ========================= */
-/* SELECT CUSTOMIZADO        */
-/* ========================= */
 
+/*--- SELECT CUSTOMIZADO --- */
 .triple-input {
   position: relative;
   overflow: visible;
@@ -259,6 +240,7 @@ body::-webkit-scrollbar-thumb:hover,
 .custom-select {
   position: relative;
   width: 100%;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -309,7 +291,7 @@ body::-webkit-scrollbar-thumb:hover,
   transform: rotate(180deg);
 }
 
-/* DROPDOWN */
+/*--- DROPDOWN ---*/
 
 .custom-select__dropdown {
 
@@ -322,8 +304,6 @@ body::-webkit-scrollbar-thumb:hover,
   background: var(--gray-900);
   border: 1px solid rgba(255, 204, 0, .5);
   border-radius: 18px;
-
-  /* Esconde via visibility/opacity, sem overflow:hidden que bloqueia o scroll */
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -340,7 +320,7 @@ body::-webkit-scrollbar-thumb:hover,
   transition: opacity .2s ease, transform .2s ease, visibility 0s 0s;
 }
 
-/* LISTA COM SCROLLBAR DOURADA */
+/*--- LISTA COM SCROLLBAR DOURADA ---*/
 
 .custom-select__list {
 
@@ -371,7 +351,7 @@ body::-webkit-scrollbar-thumb:hover,
   background: linear-gradient(180deg, #ffe27a, var(--yellow));
 }
 
-/* OPÇÕES */
+/*--- OPÇÕES ---*/
 
 .custom-select__option {
 
@@ -394,14 +374,14 @@ body::-webkit-scrollbar-thumb:hover,
   font-weight: 700;
 }
 
-/* SENHA REGRAS */
+/*--- SENHA REGRAS ---*/
 
 .password-rules {
   margin-top: 4px;
   line-height: 1.9;
 }
 
-/* BOTÃO */
+/*--- BOTÃO ---*/
 
 #register-form button {
 
@@ -449,7 +429,7 @@ body::-webkit-scrollbar-thumb:hover,
   box-shadow: 0 18px 40px rgba(255, 204, 0, .18);
 }
 
-/* LOGIN */
+/* --- LOGIN --- */
 
 .login-link {
   margin-top: 30px;
@@ -468,7 +448,7 @@ body::-webkit-scrollbar-thumb:hover,
   text-decoration: underline;
 }
 
-/* RESPONSIVO */
+/*--- RESPONSIVO ---*/
 
 @media(max-width: 700px) {
 

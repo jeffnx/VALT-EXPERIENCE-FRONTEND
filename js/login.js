@@ -16,7 +16,7 @@ const googleLogin =
 const createAccount =
   document.getElementById('create-account');
 
-/* VALIDAR INPUTS */
+/*--- VALIDAR INPUTS ---*/
 
 function validateInputs() {
 
@@ -41,7 +41,7 @@ loginPassword.addEventListener(
   validateInputs
 );
 
-/* LOGIN NORMAL */
+/*--- LOGIN NORMAL ---*/
 
 loginForm.addEventListener(
   'submit',
@@ -65,7 +65,7 @@ loginForm.addEventListener(
   }
 );
 
-/* LOGIN GOOGLE */
+/*--- LOGIN GOOGLE ---*/
 
 googleLogin.addEventListener(
   'click',

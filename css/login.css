@@ -16,7 +16,7 @@ body {
   display: flex;
 }
 
-/* LADO ESQUERDO */
+/*--- LADO ESQUERDO ---*/
 
 .login-left {
   flex: 1;
@@ -63,7 +63,7 @@ body {
   max-width: 550px;
 }
 
-/* LADO DIREITO */
+/*--- LADO DIREITO ---*/
 
 .login-right {
   width: 520px;
@@ -88,7 +88,7 @@ body {
   font-weight: 700;
 }
 
-/* FORM */
+/*--- FORM ---*/
 
 #login-form {
   display: flex;
@@ -140,7 +140,7 @@ body {
     0 0 0 4px rgba(255, 204, 0, .08);
 }
 
-/* BOTÃO PRINCIPAL */
+/*--- BOTÃO PRINCIPAL ---*/
 
 #login-submit {
   width: 100%;
@@ -183,7 +183,7 @@ body {
   box-shadow: none;
 }
 
-/* DIVISOR */
+/*--- DIVISOR ---*/
 
 .divider {
   display: flex;
@@ -203,7 +203,7 @@ body {
   font-size: 14px;
 }
 
-/* GOOGLE */
+/*--- GOOGLE ---*/
 
 #google-login {
   width: 100%;
@@ -240,7 +240,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* CRIAR CONTA */
+/*--- CRIAR CONTA ---*/
 
 #create-account {
   width: 100%;
@@ -275,7 +275,7 @@ body {
   background: rgba(255, 204, 0, .05);
 }
 
-/* RESPONSIVO */
+/*--- RESPONSIVO ---*/
 
 @media(max-width: 1000px) {
 
@@ -303,7 +303,7 @@ body {
 
 }
 
-/* BOTÃO VOLTAR */
+/*--- BOTÃO VOLTAR ---*/
 
 .back-button {
 

@@ -3,13 +3,9 @@ const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const submitButton  = document.getElementById('register-btn');
 
-/* BOTÃO COMEÇA DESABILITADO */
 submitButton.disabled = true;
 
-/* ========================= */
-/* SELECTS CUSTOMIZADOS      */
-/* ========================= */
-
+/*--- SELECTS CUSTOMIZADOS ---*/
 function initCustomSelect(selectId, listId, items) {
   const container = document.getElementById(selectId);
   const valueEl   = container.querySelector('.custom-select__value');
@@ -59,10 +55,8 @@ initCustomSelect('birth-year-select', 'birth-year-list', years);
 
 initCustomSelect('birth-month-select', null, null);
 
-/* ========================= */
-/* VALIDAÇÃO SENHA FORTE     */
-/* ========================= */
 
+/*--- VALIDAÇÃO SENHA FORTE ---*/
 const rules = {
   length:  { el: document.getElementById('rule-length'),  test: p => p.length >= 8 },
   upper:   { el: document.getElementById('rule-upper'),   test: p => /[A-Z]/.test(p) },
@@ -89,10 +83,8 @@ passwordInput.addEventListener('input', () => {
   submitButton.disabled = !validatePassword(passwordInput.value);
 });
 
-/* ========================= */
-/* SUBMIT — CADASTRAR        */
-/* ========================= */
 
+/*--- SUBMIT — CADASTRAR ---*/
 registerForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const username = usernameInput.value.trim();
