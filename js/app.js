@@ -432,3 +432,30 @@ if (isLogged === 'true') {
   if (loginBtn) loginBtn.style.display = '';
   if (userMenu) userMenu.style.display = 'none';
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modalPromo = document.getElementById("modalPromo");
+  const closeModal = document.getElementById("closeModal");
+
+  // 1. Abre o pop-up direto, toda vez que a página carregar ou reiniciar
+  if (modalPromo) {
+    modalPromo.style.display = "flex"; 
+  }
+
+  // Função apenas para esconder o modal da tela
+  function fecharOModal() {
+    modalPromo.style.display = "none";
+  }
+
+  // 2. Fecha o pop-up ao clicar no botão de fechar (X)
+  if (closeModal) {
+    closeModal.addEventListener("click", fecharOModal);
+  }
+
+  // 3. Fecha o pop-up se o usuário clicar na área escura fora do cartão
+  window.addEventListener("click", (event) => {
+    if (event.target === modalPromo) {
+      fecharOModal();
+    }
+  });
+});
